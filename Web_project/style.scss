@@ -1,0 +1,294 @@
+.container {
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+.main {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background: url('images/bak.jpg');
+
+  /* Шлях до вашого зображення */
+  background-size: cover;
+
+  /* Розмір зображення відповідатиме розміру контейнера */
+  background-position: center;
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  align-items: center;
+  color: #fff;
+
+  /* Колір тексту */
+}
+
+.header {
+  background-image: url('images/bak.jpg');
+
+  /* Додайте посилання на зображення */
+  background-size: cover;
+
+  /* Розмір фону буде змінюватися, щоб повністю покрити контейнер */
+  background-position: center;
+
+  /* Центрування фонового зображення */
+  background-repeat: no-repeat;
+
+  /* Заборона повторення фонового зображення */
+  background-attachment: fixed;
+  padding: 20px 0;
+  position: relative;
+  z-index: 10;
+}
+
+.nav-container {
+  display: flex;
+
+  a {
+    color: var(--bg-color);
+    font-size: var(--p-font);
+    font-weight: 500;
+    padding: 10px 22px;
+    border-radius: 4px;
+    transition: ease 0.4s;
+
+    &:hover {
+      background: var(--bg-color);
+      color: var(--text-color);
+      box-shadow: 5px 10px 30px rgba(85, 85, 85, 0.2);
+      border-radius: 4px;
+    }
+  }
+}
+
+nav ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  justify-content: flex-end;
+
+  li {
+    margin: 0 10px;
+
+    a {
+      color: #000000;
+      font-size: 16px;
+      font-weight: 500;
+      text-decoration: none;
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+}
+
+header {
+  h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 48px;
+    font-weight: bold;
+    line-height: 1.5;
+    margin: 0;
+    margin-bottom: 10px;
+  }
+
+  p {
+    font-size: 20px;
+    line-height: 1.5;
+    margin-bottom: 20px;
+  }
+
+  h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 48px;
+    font-weight: bold;
+    line-height: 1.5;
+    margin: 0;
+    margin-bottom: 10px;
+  }
+
+  p {
+    font-size: 20px;
+    line-height: 1.5;
+    margin-bottom: 20px;
+  }
+}
+
+@media screen and (max-width: 992px) {
+  .header {
+    padding: 10px 0;
+  }
+
+  nav ul {
+    flex-direction: column;
+    align-items: center;
+
+    li {
+      margin: 5px 0;
+    }
+  }
+}
+
+body {
+  font-family: 'Playfair Display', sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Playfair Display', serif;
+}
+
+p {
+  font-family: 'Georgia', serif;
+}
+
+.main, .travel, footer {
+  background-color: #f9f9f9;
+  padding: 30px 0;
+  text-align: center;
+  background-image: url('images/bak.jpg');
+
+  /* Додайте посилання на зображення */
+  background-size: cover;
+
+  /* Розмір фону буде змінюватися, щоб повністю покрити контейнер */
+  background-position: center;
+
+  /* Центрування фонового зображення */
+  background-repeat: no-repeat;
+
+  /* Заборона повторення фонового зображення */
+  background-attachment: fixed;
+
+  /* Зробіть фонове зображення фіксованим */
+}
+
+@media screen and (max-width: 992px) {
+  .column {
+    width: 50%;
+  }
+}
+
+.articles {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+article {
+  width: 30%;
+  margin-bottom: 30px;
+  position: relative;
+  overflow: hidden;
+
+  img {
+    width: 100%;
+    border-radius: 5px;
+    transition: transform 0.3s ease-in-out;
+  }
+
+  &:hover img {
+    transform: scale(1.1);
+  }
+
+  h3 {
+    margin: 10px 0;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 24px;
+    font-weight: bold;
+  }
+
+  p {
+    font-style: italic;
+    font-size: 16px;
+    line-height: 1.5;
+  }
+}
+
+.articles article {
+  width: 30%;
+  margin-bottom: 30px;
+
+  img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 5px;
+  }
+}
+
+.home-section {
+  height: 100vh;
+
+  /* Висота рівна 100% висоті вікна браузера */
+  background-image: url('images/bak.jpg');
+
+  /* Фото фону */
+  background-size: cover;
+
+  /* Розмір фону буде залежати від розміру контейнера */
+  background-position: center;
+
+  /* Центруємо фон */
+  color: #000000;
+
+  /* Колір тексту на фоні */
+  display: flex;
+
+  /* Встановлюємо flex-контейнер для центрування вмісту */
+  justify-content: center;
+
+  /* Горизонтальне центрування вмісту */
+  align-items: center;
+
+  /* Вертикальне центрування вмісту */
+  text-align: center;
+
+  /* Вирівнюємо текст по центру */
+}
+
+footer {
+  background-color: #333;
+  color: #000000;
+  padding: 20px 0;
+  text-align: center;
+
+  p {
+    font-size: 16px;
+    line-height: 1.5;
+    margin-bottom: 10px;
+  }
+
+  a {
+    color: #000000;
+    text-decoration: none;
+    margin: 0 10px;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}
+
+@media screen and (max-width: 768px) {
+  footer {
+    text-align: left;
+  }
+}
+
+.learn-more-button {
+  background-color: #ffffff;
+  color: #000000;
+  border: 2px solid #000000;
+  padding: 10px 20px;
+  border-radius: 5px;
+  font-size: 16px;
+  text-decoration: none;
+  transition: background-color 0.3s, color 0.3s;
+
+  &:hover {
+    background-color: #000000;
+    color: #ffffff;
+  }
+}

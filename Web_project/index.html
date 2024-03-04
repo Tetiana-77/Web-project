@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="style.css">
+<title>Блог про подорожі</title>
+</head>
+<body>
+  <header class="header">
+    <div class="container">
+      <h1>Блог про подорожі</h1>
+      <div class="nav-container">
+        <nav>
+        <ul>
+          <li><a href="#home" class="home-link">Home</a></li>
+          <li><a href="#beach" class="travel-link">Пляжі</a></li>
+          <li><a href="#mountain" class="travel-link">Гори</a></li>
+          <li><a href="#city" class="travel-link">Культурні міста</a></li>
+        </ul>
+      </nav>
+    </div>
+  </div>
+  </header>
+  <div class="main home-section">
+    <div class="container">
+      <h2 id="home">Home</h2>
+      <p>Блог про подорожі - це місце, де ви можете дізнатися про найцікавіші маршрути, подорожі, екзотичні місця та багато іншого. Ми пропонуємо широкий вибір інформації та порад, які допоможуть вам зробити вашу подорож незабутньою. Приєднуйтеся до нас і відкривайте світ разом із нами!</p>
+      <a href="#beach" class="learn-more-button">Дізнатися Більше</a>
+    </div>
+  </div>
+  
+
+  <div class="travel" id="beach">
+    <div class="container">
+      <h2>Пляжі</h2>
+      <p>Проведіть час на найкращих пляжах світу з нашими порадами.</p>
+      <div class="articles">
+        <article>
+          <img src="images/beach.jpg" alt="Destination 1">
+          <h3>Екзотичні пляжі</h3>
+          <p>Проведіть час на найкращих пляжах світу з нашими порадами.</p>
+        </article>
+         
+        <article>
+          <h3>Поради для відпочинку на пляжі</h3>
+          <p>1. Не забудьте захистити свою шкіру від сонця, використовуючи засоби з SPF.</p>
+          <p>2. Перед плаванням переконайтеся, що вода безпечна для купання.</p>
+          <p>3. Завжди бережіть довкілля: не залишайте сміття на пляжі.</p>
+        </article>
+      </div>
+    </div>
+  </div>
+  
+
+  <div class="travel" id="mountain">
+    <div class="container">
+      <h2>Гори</h2>
+      <p>Відправтеся на неймовірні гірські подорожі та насолоджуйтесь красою природи.</p>
+      <div class="articles">
+        <article>
+          <img src="images/mountain.jpg" alt="Destination 2">
+          <h3>Мальовничі гірські маршрути</h3>
+          <p>Відправтеся на неймовірні гірські подорожі та насолоджуйтесь красою природи.</p>
+        </article>
+        
+        <article>
+          <h3>Поради для гірських походів</h3>
+          <p>1. Переконайтеся, що ви маєте відповідне снаряддя та екіпірування для гірського походу.</p>
+          <p>2. Плануйте маршрут заздалегідь та оцінюйте погодні умови перед виходом на гору.</p>
+          <p>3. Будьте обережні під час перетину річок та уникайте небезпечних місць.</p>
+        </article>
+      </div>
+    </div>
+  </div>
+  
+
+  <div class="travel" id="city">
+    <div class="container">
+      <h2>Культурні міста</h2>
+      <p>Відвідайте найцікавіші культурні міста та дізнайтеся про їхню історію та традиції.</p>
+      <div class="articles">
+        <article>
+          <img src="images/town.jpg" alt="Destination 3">
+          <h3>Культурні міста</h3>
+          <p>Відвідайте найцікавіші культурні міста та дізнайтеся про їхню історію та традиції.</p>
+        </article>
+        
+        <article>
+          <h3>Поради для подорожі до культурних міст</h3>
+          <p>1. Плануйте свій маршрут так, щоб відвідати найцікавіші культурні пам'ятки міста.</p>
+          <p>2. Дізнайтеся про місцеві традиції та звичаї, щоб краще розуміти культурний контекст.</p>
+          <p>3. Спробуйте місцеві страви та напої, щоб відчути аутентичний смак культури міста.</p>
+        </article>
+      </div>
+    </div>
+  </div>
+  
+
+  <footer class="footer">
+    <div class="container">
+      <p>&copy; 2024 Блог про подорожі. Усі права захищені.</p>
+    </div>
+  </footer>
+
+  <script>
+    const links = document.querySelectorAll('a[href^="#"]');
+
+    links.forEach(link => {
+      link.addEventListener('click', function(e) {
+        e.preventDefault();
+
+        const targetId = this.getAttribute('href').substring(1);
+        const targetSection = document.getElementById(targetId);
+
+        window.scrollTo({
+          top: targetSection.offsetTop - 50,
+          behavior: 'smooth'
+        });
+      });
+    });
+  </script>
+</body>
+</html>
