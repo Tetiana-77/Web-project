@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Опитування</title>
+    <link rel="stylesheet" href="pool.css">
+</head>
+<body>
+    <h2>Опитування</h2>
+    <form id="surveyForm"a>
+          <li>
+            <label for="name">1. Як вас звати?</label><br>
+            <input type="text" id="name" name="name" required>
+          </li>
+          <li>
+            <label for="age">2. Вкажіть ваш вік:</label><br>
+            <input type="number" id="age" name="age" min="18" required>
+          </li>
+          <li>
+            <label for="gender">3. Оберіть вашу стать:</label><br>
+            <input type="radio" id="male" name="gender" value="male">
+            <label for="male">Чоловіча</label>
+            <input type="radio" id="female" name="gender" value="female">
+            <label for="female">Жіноча</label>
+          </li>
+          <li>
+            <label for="country">4. Вкажіть вашу країну:</label><br>
+            <select id="country" name="country" required>
+              <option value="">Виберіть країну</option>
+              <option value="ukraine">Україна</option>
+              <option value="usa">США</option>
+              <option value="germany">Німеччина</option>
+            </select>
+          </li>
+          <li>
+            <label for="feedback">5. Напишіть ваші коментарі:</label><br>
+            <textarea id="feedback" name="feedback" rows="4" required></textarea>
+          </li>
+          <li>
+            <label for="subscribe">6. Підпишіться на нашу розсилку:</label><br>
+            <input type="checkbox" id="subscribe" name="subscribe" value="yes">
+            <label for="subscribe">Так, підписатися</label>
+            <label for="subscribe">Ні, іншим разом</label>
+          </li>
+          <li>
+            <label for="seaFrequency">7. Як часто ви подорожуєте на море?</label><br>
+            <input type="radio" id="seaFrequency_regular" name="seaFrequency" value="Регулярно">
+            <label for="seaFrequency_regular">Регулярно</label><br>
+            <input type="radio" id="seaFrequency_sometimes" name="seaFrequency" value="Іноді">
+            <label for="seaFrequency_sometimes">Іноді</label><br>
+            <input type="radio" id="seaFrequency_never" name="seaFrequency" value="Не подорожую взагалі">
+            <label for="seaFrequency_never">Не подорожую взагалі</label><br>
+        </li>
+        <li>
+            <label for="tripAspect">8. Що для вас є найважливішим аспектом подорожі?</label><br>
+            <input type="radio" id="tripAspect_relaxation" name="tripAspect" value="Відпочинок і релаксація">
+            <label for="tripAspect_relaxation">Відпочинок і релаксація</label><br>
+            <input type="radio" id="tripAspect_cultural" name="tripAspect" value="Пізнавальний туризм">
+            <label for="tripAspect_cultural">Пізнавальний туризм</label><br>
+            <input type="radio" id="tripAspect_active" name="tripAspect" value="Активний відпочинок">
+            <label for="tripAspect_active">Активний відпочинок</label><br>
+        </li>
+        <li>
+            <label for="biggestFear">9. Який ваш найбільший страх під час подорожі?</label><br>
+            <input type="text" id="biggestFear" name="biggestFear" placeholder="Ваша відповідь">
+        </li>
+        <li>
+            <label for="travelPlanning">10. Коли в б хотіли поїхати у подорож?</label><br>
+            <input type="date" id="travelPlanning" name="travelPlanning">
+        </li>
+        
+      </li>
+      
+        
+        <button type="submit">Надіслати</button>
+        <button id="backBtn">Повернутися назад</button> <!-- Додана кнопка "Повернутися назад" -->
+        
+        
+      </form>
+      <form id="countryFilterForm">
+        <label for="countryFilter">Фільтр за країною:</label>
+        <select id="countryFilter">
+            <option value="">Виберіть країну</option>
+            <option value="ukraine">Україна</option>
+            <option value="usa">США</option>
+            <option value="germany">Німеччина</option>
+        </select>
+        <button type="submit">Фільтрувати</button>
+    </form>
+  
+    <!-- Форма фільтрації за віком учасників -->
+    <form id="ageFilterForm">
+        <label for="minAge">Мінімальний вік:</label>
+        <input type="number" id="minAge" min="18">
+        <label for="maxAge">Максимальний вік:</label>
+        <input type="number" id="maxAge" min="18">
+        <button type="submit">Фільтрувати</button>
+    </form>
+
+    <!-- Форма фільтрації за датою планування подорожі -->
+    <form id="travelPlanningFilterForm">
+        <label for="travelDateInput">Фільтр за датою подорожі:</label>
+        <input type="date" id="travelDateInput">
+        <button type="submit">Фільтрувати</button>
+    </form>
+
+    <!-- Вивід результатів фільтрації -->
+    <ul id="surveyResults"></ul>
+
+      <script>
+        const form = document.getElementById('surveyForm');
+
+        form.addEventListener('submit', function(event) {
+            event.preventDefault();
+            
+            const formData = new FormData(form);
+            const data = {};
+            for (const [key, value] of formData.entries()) {
+                data[key] = value;
+            }
+
+            // Збереження даних в localStorage
+            const surveys = JSON.parse(localStorage.getItem('surveys')) || [];
+            surveys.push(data);
+            localStorage.setItem('surveys', JSON.stringify(surveys));
+
+            // Очистка форми після відправки
+            form.reset();
+        });
+        document.addEventListener('DOMContentLoaded', function() {
+          const backBtn = document.getElementById('backBtn');
+        
+          backBtn.addEventListener('click', function() {
+            window.location.href = 'index.html';
+          });
+        });  
+        // Функція для фільтрації даних за країною
+        function filterSurveysByCountry(country) {
+          const surveys = JSON.parse(localStorage.getItem('surveys')) || [];
+          return surveys.filter(survey => survey.country === country);
+      }
+
+      // Функція для фільтрації даних за віком учасників
+      function filterSurveysByAge(minAge, maxAge) {
+          const surveys = JSON.parse(localStorage.getItem('surveys')) || [];
+          return surveys.filter(survey => {
+              const age = parseInt(survey.age);
+              return age >= minAge && age <= maxAge;
+          });
+      }
+
+      // Функція для фільтрації даних за датою планування подорожі
+      function filterSurveysByTravelDate(date) {
+          const surveys = JSON.parse(localStorage.getItem('surveys')) || [];
+          return surveys.filter(survey => {
+              if (survey.travelPlanning) {
+                  const surveyDate = new Date(survey.travelPlanning);
+                  return surveyDate.getTime() === date.getTime();
+              }
+              return false;
+          });
+      }
+
+      // Відображення результатів фільтрації на сторінці
+      function displayResults(results) {
+          const element = document.getElementById('surveyResults');
+          // Очищення вмісту елементу
+          element.innerHTML = '';
+
+          if (results.length === 0) {
+              const noResultsMessage = document.createElement('p');
+              noResultsMessage.textContent = 'Немає результатів, що відповідають критеріям фільтрації.';
+              element.appendChild(noResultsMessage);
+          } else {
+              results.forEach(result => {
+                  const listItem = document.createElement('li');
+                  listItem.textContent = `${result.name}, ${result.age} років, ${result.gender}, з країни ${result.country}`;
+                  element.appendChild(listItem);
+              });
+          }
+      }
+
+      document.addEventListener('DOMContentLoaded', function() {
+          // Обробник події для форми фільтрації за країною
+          document.getElementById('countryFilterForm').addEventListener('submit', function(event) {
+              event.preventDefault();
+              const selectedCountry = document.getElementById('countryFilter').value;
+              const filteredSurveys = filterSurveysByCountry(selectedCountry);
+              displayResults(filteredSurveys);
+          });
+
+          // Обробник події для форми фільтрації за віком учасників
+          document.getElementById('ageFilterForm').addEventListener('submit', function(event) {
+              event.preventDefault();
+              const minAge = parseInt(document.getElementById('minAge').value);
+              const maxAge = parseInt(document.getElementById('maxAge').value);
+              const filteredSurveys = filterSurveysByAge(minAge, maxAge);
+              displayResults(filteredSurveys);
+          });
+
+          // Обробник події для форми фільтрації за датою планування подорожі
+          document.getElementById('travelPlanningFilterForm').addEventListener('submit', function(event) {
+              event.preventDefault();
+              const selectedDate = new Date(document.getElementById('travelDateInput').value);
+              const filteredSurveys = filterSurveysByTravelDate(selectedDate);
+              displayResults(filteredSurveys);
+          });
+      }); 
+    </script>
+</body>
+</html>
