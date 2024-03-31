@@ -1,0 +1,107 @@
+[
+  {
+    "question": "Яка найбільша пустеля у світі?",
+    "answers": [
+      {
+        "answer": "Сахара",
+        "isCorrect": true
+      },
+      {
+        "answer": "Атакама",
+        "isCorrect": false
+      },
+      {
+        "answer": "Калагарі",
+        "isCorrect": false
+      },
+      {
+        "answer": "Гобі",
+        "isCorrect": false
+      }
+    ]
+  },
+  {
+    "question": "Яка столиця Японії?",
+    "answers": [
+      {
+        "answer": "Токіо",
+        "isCorrect": true
+      },
+      {
+        "answer": "Сеул",
+        "isCorrect": false
+      },
+      {
+        "answer": "Пекін",
+        "isCorrect": false
+      },
+      {
+        "answer": "Гонконг",
+        "isCorrect": false
+      }
+    ]
+  },
+  {
+    "question": "Де знаходиться Ейфелева вежа?",
+    "answers": [
+      {
+        "answer": "У Парижі, Франція",
+        "isCorrect": true
+      },
+      {
+        "answer": "У Барселоні, Іспанія",
+        "isCorrect": false
+      },
+      {
+        "answer": "У Римі, Італія",
+        "isCorrect": false
+      },
+      {
+        "answer": "У Лондоні, Великобританія",
+        "isCorrect": false
+      }
+    ]
+  },
+  {
+    "question": "Яка найвища гора у світі?",
+    "answers": [
+      {
+        "answer": "Еверест",
+        "isCorrect": true
+      },
+      {
+        "answer": "Кіліманджаро",
+        "isCorrect": false
+      },
+      {
+        "answer": "Джомолунґма",
+        "isCorrect": false
+      },
+      {
+        "answer": "Аконкагуа",
+        "isCorrect": false
+      }
+    ]
+  },
+  {
+    "question": "Де знаходиться Піраміди Гізи?",
+    "answers": [
+      {
+        "answer": "У Каїрі, Єгипет",
+        "isCorrect": true
+      },
+      {
+        "answer": "У Римі, Італія",
+        "isCorrect": false
+      },
+      {
+        "answer": "У Мехіко, Мексика",
+        "isCorrect": false
+      },
+      {
+        "answer": "У Афінах, Греція",
+        "isCorrect": false
+      }
+    ]
+  }
+]
